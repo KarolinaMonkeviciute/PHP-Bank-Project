@@ -1,0 +1,18 @@
+<?php
+echo "started \n";
+
+$month = rand(0, 1) ? '0'.rand(1, 9) : '1'.rand(0, 2);
+
+$acc = [
+    [
+        'id' => rand(10000000, 99999999),
+        'name' => 'Vardenis',
+        'lname' => 'Pavardenis',
+        'number' => 'LT'.rand(100000000000000000, 999999999999999999),
+        'code' => rand(3,6).rand(23, 99).$month.rand(1000, 9999),
+        'balance' => 0,
+    ],
+];
+
+file_put_contents(__DIR__.'/../data/acc.ser', serialize($acc));
+echo "finished \n";
